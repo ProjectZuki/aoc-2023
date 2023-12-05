@@ -5,10 +5,6 @@ Source code solutions are currently implemented in c++ and Quorum ([See Quorum P
 ## Table of Contents
 
 - [Day 1](#day-1)
-  - [Part 1](#part-1)
-    - [C++](#c++)
-    - [Quorum](#quorum)
-  - [Part 2](#part-2)
     - [C++](#c++)
     - [Quorum](#quorum)
 
