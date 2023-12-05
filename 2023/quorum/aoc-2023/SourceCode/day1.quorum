@@ -1,0 +1,13 @@
+use Libraries.Containers.Iterator
+use Libraries.Containers.Array
+use Libraries.System.File
+use Libraries.System.FileReader
+use Libraries.Language.Errors.Error
+use Libraries.Language.Errors.FileNotFoundError
+use Libraries.Language.Errors.UndefinedObjectError
+
+
+class day1
+    action run_day1
+    end
+end

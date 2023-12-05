@@ -48,3 +48,7 @@ int main () {
 
     return 0;
 }
+
+//ans: 54951
+
+/// EOF ///
