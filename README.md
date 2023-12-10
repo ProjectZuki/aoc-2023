@@ -1,6 +1,6 @@
 # Advent of Code 2023
 
-Source code solutions are currently implemented in c++ and Quorum ([See Quorum Programming Language](https://quorumlanguage.com){:target="_blank"})
+Source code solutions are currently implemented in c++ and Quorum ([See Quorum Programming Language](https://quorumlanguage.com))
 
 ## Table of Contents
 
