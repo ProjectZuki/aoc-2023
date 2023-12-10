@@ -13,10 +13,10 @@ Source code solutions are currently implemented in c++ and Quorum ([See Quorum P
 ## Day 1
 
 #### C++
-- [x] **Completed**: The C++ solution for Day 1 is available [here](2023/c++/day1/day1.cpp).
+- [x] **Completed**: The C++ solution for Day 1 is available [here](c++/day1/day1.cpp).
 
 #### Quorum
-- [x] **Completed**: The Quorum solution for Day 1, Part 1 is available [here](2023/quorum/aoc-2023/SourceCode/day1.quorum).
+- [x] **Completed**: The Quorum solution for Day 1, Part 1 is available [here](quorum/aoc-2023/SourceCode/day1.quorum).
 
 ## Day 2
 
