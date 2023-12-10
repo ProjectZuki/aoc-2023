@@ -5,8 +5,10 @@ Source code solutions are currently implemented in c++ and Quorum ([See Quorum P
 ## Table of Contents
 
 - [Day 1](#day-1)
-    - [C++](#c++)
+    - [C++](#c)
     - [Quorum](#quorum)
+- [Day 2](#day-2)
+    - [C++](#c-1)
 
 ## Day 1
 
@@ -15,3 +17,7 @@ Source code solutions are currently implemented in c++ and Quorum ([See Quorum P
 
 #### Quorum
 - [x] **Completed**: The Quorum solution for Day 1, Part 1 is available [here](2023/quorum/aoc-2023/SourceCode/day1.quorum).
+
+## Day 2
+
+#### C++

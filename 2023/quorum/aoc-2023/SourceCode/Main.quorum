@@ -33,7 +33,7 @@ class Main
         
         // process file contents
         repeat while wordItr:HasNext()
-            integer index = 0
+            text index = 0
             integer first = 0
             integer last = 0
             text line = wordItr:Next()
