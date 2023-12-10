@@ -9,3 +9,4 @@ a.out
 .DS_Store
 *.qp
 .vscode/settings.json
+*.json
