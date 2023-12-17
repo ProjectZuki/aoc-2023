@@ -1,0 +1,131 @@
+use Libraries.Containers.Iterator
+use Libraries.Containers.Array
+use Libraries.System.File
+use Libraries.System.FileReader
+use Libraries.Language.Errors.Error
+use Libraries.Language.Errors.FileNotFoundError
+use Libraries.Language.Errors.UndefinedObjectError
+use Libraries.Containers.Queue
+use Libraries.Compute.Vector
+
+class day2
+    action Main
+        File inFile
+        FileReader reader
+        inFile:SetPath("day2-input/sample.txt")
+
+        check        
+            reader:OpenForRead(inFile)
+        detect e is FileNotFoundError
+             output e:GetErrorMessage()
+        end
+
+        integer idsum = 0
+        boolean possible = true
+        boolean endgroup = true
+        integer gamenum = 0
+
+        // read contents of file, split words for processing
+        repeat while not reader:IsAtEndOfFile()
+            // parse single line
+            text line = reader:ReadLine()
+            text game = ""
+            text blocks = ""
+            text c = ""
+
+            // sepearate game num with values
+            Array<text> lineArr = line:Split(":")
+            Iterator<text> lineItr = lineArr:GetIterator()
+
+            // repeat until line is read, line size must be > 0 else complains
+            repeat while lineItr:HasNext() and line:GetSize() > 0
+                // process game number
+                game = lineItr:Next()
+
+                
+                // get game nuumber
+                blocks = lineItr:Next()
+                c = game:GetCharacter(game:GetSize()-1)
+//                output "Game #" + c + blocks
+
+            end
+
+            check
+                gamenum = c:ParseInteger()
+            detect e is Error  
+                // do nothing, only parse integers
+            end
+
+            integer redblocks = 0
+            integer greenblocks = 0
+            integer blueblocks = 0
+
+            Array<text> blocksArr = blocks:Split(";")
+            Iterator<text> blocksItr = blocksArr:GetIterator()
+
+            repeat while blocksItr:HasNext()
+                text hand = blocksItr:Next()
+                output hand
+
+                Array<text> handArr = hand:Split(",")
+                Iterator<text> handItr = handArr:GetIterator()
+
+                repeat while handItr:HasNext()
+                    text singleblock = handItr:Next()
+
+                    Array<text> singleblocks = singleblock:Split(" ")
+                    Iterator<text> singleblocksItr = singleblocks:GetIterator()
+
+                    repeat while singleblocksItr:HasNext()
+//                        text num = singleblocksItr:Next()
+//                        output "num = " + num
+                        // at this point we have split the individual values, but cannot 
+                        // figure out the rogue space at the beginning
+
+                        // TODO: Try different way of parsing
+                    end
+                end
+//
+//                if hand:GetSize() > 0
+//                    text num = handItr:Next()
+//                    text color = handItr:Next()
+//
+//                    output num + " " + color
+//
+//                    check
+//                        integer numblocks = num:ParseInteger()
+//                    detect e is Error
+//                        // do nothing
+//                    end
+//                    
+//                    if color = "red"
+//                        // process red
+//                    end
+//                    if color = "green"
+//                        // process green
+//                    end
+//                    if color = "blue"
+//                        // process blue
+//                    end                    
+//
+//                end
+                
+            end
+        end    
+
+        
+        
+    end
+
+    action is_digit(text char) returns boolean
+        // check if char is integer
+        check
+            char:ParseInteger()
+        detect e is Error
+            return false
+        end
+        return true
+    end
+end
+
+// ans: 2176

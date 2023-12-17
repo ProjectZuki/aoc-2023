@@ -1,90 +1,89 @@
-//use Libraries.Containers.Iterator
-//use Libraries.Containers.Array
-//use Libraries.System.File
-//use Libraries.System.FileReader
-//use Libraries.Language.Errors.Error
-//use Libraries.Language.Errors.FileNotFoundError
-//use Libraries.Language.Errors.UndefinedObjectError
-//use Libraries.Containers.Queue
-//use Libraries.Compute.Vector
-//
-//class Main
+use Libraries.Containers.Iterator
+use Libraries.Containers.Array
+use Libraries.System.File
+use Libraries.System.FileReader
+use Libraries.Language.Errors.Error
+use Libraries.Language.Errors.FileNotFoundError
+use Libraries.Language.Errors.UndefinedObjectError
+use Libraries.Containers.Queue
+use Libraries.Compute.Vector
+
+class day1
     action Main
-//        File inFile
-//        FileReader reader
-//        inFile:SetPath("input.txt")
-//
-//        check        
-//            reader:OpenForRead(inFile)
-//        detect e is FileNotFoundError
-//             output e:GetErrorMessage()
-//        end
-//        
-//        text fileContents = ""
-//            
-//        // read contents of file, split words for processing
-//        repeat while not reader:IsAtEndOfFile()
-//            fileContents = fileContents + reader:ReadLine() + " "
-//        end       
-//
-//        Array<text> wordArr = fileContents:Split(" ")
-//        Iterator<text> wordItr = wordArr:GetIterator()
-//        integer totalsum = 0
-//        
-//        // process file contents
-//        repeat while wordItr:HasNext()
-//            integer index = 0
-//            integer first = 0
-//            integer last = 0
-//            text line = wordItr:Next()
-//            
-//            Array<text> letters = line:Split("")
-//            Iterator<text> letterItr = letters:GetIterator()
-//
-//            // process single line of input, find first/last
-//            repeat while letterItr:HasNext()
-//                text char = letterItr:Next()
-//                if is_digit(char)
-//                    integer num = char:ParseInteger()
-//                    // save first number
-//                    if first = 0
-//                        first = num
-//                    else // save last number
-//                        last = num
-//                    end
-//                end
-//            end
-//
-//            // set calibration value 
-//            if last = 0
-//                last = first
-//            end
-//            integer value = first*10 + last
-//
-//            // DEBUG
-////            output line
-////            output "First = " + first + " Last = " + last + " | " + value
-//
-//            totalsum = totalsum + value
-//
-//            first = 0
-//            last = 0
-//            
-//        end
-//
-//            output "total sum = " + totalsum
-//
-//        inFile:Close()
-//    end
-//
-//    action is_digit(text char) returns boolean
-//        // check if char is integer
-//        check
-//            char:ParseInteger()
-//        detect e is Error
-//            return false
-//        end
-//        return true
+        File inFile
+        FileReader reader
+        inFile:SetPath("day1-input/input.txt")
+
+        check        
+            reader:OpenForRead(inFile)
+        detect e is FileNotFoundError
+             output e:GetErrorMessage()
+        end
+        
+        text fileContents = ""
+            
+        // read contents of file, split words for processing
+        repeat while not reader:IsAtEndOfFile()
+            fileContents = fileContents + reader:ReadLine() + " "
+        end       
+
+        Array<text> wordArr = fileContents:Split(" ")
+        Iterator<text> wordItr = wordArr:GetIterator()
+        integer totalsum = 0
+        
+        // process file contents
+        repeat while wordItr:HasNext()
+            integer index = 0
+            integer first = 0
+            integer last = 0
+            text line = wordItr:Next()
+            
+            Array<text> letters = line:Split("")
+            Iterator<text> letterItr = letters:GetIterator()
+
+            // process single line of input, find first/last
+            repeat while letterItr:HasNext()
+                text char = letterItr:Next()
+                if is_digit(char)
+                    integer num = char:ParseInteger()
+                    // save first number
+                    if first = 0
+                        first = num
+                    else // save last number
+                        last = num
+                    end
+                end
+            end
+
+            // set calibration value 
+            if last = 0
+                last = first
+            end
+            integer value = first*10 + last
+
+            // DEBUG
+//            output line
+//            output "First = " + first + " Last = " + last + " | " + value
+
+            totalsum = totalsum + value
+
+            first = 0
+            last = 0
+            
+        end
+
+            output "total sum = " + totalsum
+
+        inFile:Close()
     end
-//end
-//
+
+    action is_digit(text char) returns boolean
+        // check if char is integer
+        check
+            char:ParseInteger()
+        detect e is Error
+            return false
+        end
+        return true
+    end
+end

@@ -1,9 +1,7 @@
 
 #include <iostream>
-#include <vector>
 #include <fstream>
 #include <string>
-#include <stack>
 #include <sstream>
 
 int main () {
